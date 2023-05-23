@@ -1,0 +1,19 @@
+<project name="EvenOddProgram" default="compile">
+
+    <target name="init">
+        <mkdir dir="bin"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="." destdir="bin"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="EvenOddProgram" classpath="bin"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+</project>
