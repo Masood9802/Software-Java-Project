@@ -1,0 +1,16 @@
+JC = javac
+SRCDIR = src
+BINDIR = bin
+SRCFILES = $(wildcard $(SRCDIR)/*.java)
+CLASSFILES = $(patsubst $(SRCDIR)/%.java,$(BINDIR)/%.class,$(SRCFILES))
+
+.PHONY: all clean
+
+all: $(CLASSFILES)
+
+$(BINDIR)/%.class: $(SRCDIR)/%.java
+	@mkdir -p $(BINDIR)
+	$(JC) -d $(BINDIR) $<
+
+clean:
+	rm -rf $(BINDIR)
