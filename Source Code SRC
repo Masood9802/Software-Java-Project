@@ -16,5 +16,7 @@ public class EvenOddProgram {
         }
 
         scanner.close();
+
+        System.out.println("Thank you for using the EvenOddProgram!");
     }
 }
